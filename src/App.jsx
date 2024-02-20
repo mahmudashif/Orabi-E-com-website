@@ -1,15 +1,18 @@
-// import Image from "./components/Image";
-// import logo from "../src/assets/Logo.png";
-// import List from "./components/layouts/List";
-// import ListItem from "./components/layouts/ListItem";
-// import { HiMiniBars3CenterLeft } from "react-icons/hi2";
-// import Flex from "./components/Flex";
-// import { useEffect, useState } from "react";
+import React from 'react'
+import RootLayout from './components/layouts/RootLayout'
+import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
 
-import Navbar from "./components/Navbar";
-
-export default function App() {
+const App = () => {
+  let router = createBrowserRouter(
+    createRoutesFromElements(
+      <Route path='/'>
+        <Route path='/'/>
+      </Route>
+    )
+  )
   return (
-    <Navbar/>
+    <RouterProvider router={router}/>
   )
 }
+
+export default App
